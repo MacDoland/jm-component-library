@@ -14,11 +14,13 @@ export default {
     plugins: [
         external(),
         commonjs(),
-        typescript({ tsconfig: './tsconfig.json' }),
+        typescript(),
         babel({
             exclude: 'node_modules/**',
             babelHelpers: 'bundled' 
         }),
+        del({ targets: ['dist/*'] }),
+
     ],
     external: Object.keys(pkg.peerDependencies || {}),
 };
