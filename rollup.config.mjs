@@ -24,6 +24,7 @@ export default [
         extensions: [".js", ".ts"],
         include: resolve("src", "**", "*.ts"),
       }),
+      //terser(), //minified bundle
       del({ targets: ["dist/*"] }),
     ],
     external: Object.keys(pkg.peerDependencies || {}),
