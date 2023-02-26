@@ -1,3 +1,4 @@
+import Banner from "./components/Banner";
 import HelloWorld from "./components/HelloWorld";
 
 import {
@@ -44,6 +45,7 @@ export {
   Typography,
 
   /* Custom Components */
+  Banner,
   HelloWorld,
 
   /* Theme */
