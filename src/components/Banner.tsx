@@ -60,8 +60,8 @@ const Banner = () => {
         </Toolbar>
       </AppBar>
       <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.img}>
+        {itemData.map((item, index) => (
+          <ImageListItem key={index}>
             <img
               src={item.img}
               srcSet={item.img}

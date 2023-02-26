@@ -20,7 +20,7 @@ export default [
       resolve(),
       addDefaultToRequire({
         file: "dist/index.cjs.js",
-        targetPattern: '@mui/material/[A-Z]+[a-z0-9]*',
+        targetPattern: '@mui/(icons-material|material)/[A-Z]+[A-z0-9]*',
       }),
       //terser(), //minified bundle
     ],

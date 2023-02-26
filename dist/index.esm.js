@@ -70,7 +70,7 @@ var Banner = function () {
             img: "https://via.placeholder.com/164",
         },
     ];
-    return (jsxs(Box, __assign({ sx: { flexGrow: 1 } }, { children: [jsx(AppBar, __assign({ position: "static" }, { children: jsxs(Toolbar, { children: [jsx(IconButton, __assign({ size: "large", edge: "start", color: "inherit", "aria-label": "menu", sx: { mr: 2 } }, { children: jsx(MenuIcon, {}) })), jsx(Typography, __assign({ variant: "h6", component: "div", sx: { flexGrow: 1 } }, { children: "News" })), jsx(Button, __assign({ color: "inherit" }, { children: "Login" }))] }) })), jsx(ImageList, __assign({ sx: { width: 500, height: 450 }, cols: 3, rowHeight: 164 }, { children: itemData.map(function (item) { return (jsx(ImageListItem, { children: jsx("img", { src: item.img, srcSet: item.img, alt: item.title, loading: "lazy" }) }, item.img)); }) }))] })));
+    return (jsxs(Box, __assign({ sx: { flexGrow: 1 } }, { children: [jsx(AppBar, __assign({ position: "static" }, { children: jsxs(Toolbar, { children: [jsx(IconButton, __assign({ size: "large", edge: "start", color: "inherit", "aria-label": "menu", sx: { mr: 2 } }, { children: jsx(MenuIcon, {}) })), jsx(Typography, __assign({ variant: "h6", component: "div", sx: { flexGrow: 1 } }, { children: "News" })), jsx(Button, __assign({ color: "inherit" }, { children: "Login" }))] }) })), jsx(ImageList, __assign({ sx: { width: 500, height: 450 }, cols: 3, rowHeight: 164 }, { children: itemData.map(function (item, index) { return (jsx(ImageListItem, { children: jsx("img", { src: item.img, srcSet: item.img, alt: item.title, loading: "lazy" }) }, index)); }) }))] })));
 };
 
 var HelloWorld = function () {

@@ -1,15 +1,15 @@
 'use strict';
 
 var jsxRuntime = require('react/jsx-runtime');
-var AppBar = require('@mui/material/AppBar');
+var AppBar = require('@mui/material/AppBar').default;
 var Box = require('@mui/material/Box').default;
 var Button = require('@mui/material/Button').default;
-var IconButton = require('@mui/material/IconButton');
-var ImageList = require('@mui/material/ImageList');
-var ImageListItem = require('@mui/material/ImageListItem');
+var IconButton = require('@mui/material/IconButton').default;
+var ImageList = require('@mui/material/ImageList').default;
+var ImageListItem = require('@mui/material/ImageListItem').default;
 var Toolbar = require('@mui/material/Toolbar').default;
 var Typography = require('@mui/material/Typography').default;
-var MenuIcon = require('@mui/icons-material/Menu');
+var MenuIcon = require('@mui/icons-material/Menu').default;
 var material = require('@mui/material');
 var styles = require('@mui/material/styles');
 var colors = require('@mui/material/colors');
@@ -71,7 +71,7 @@ var Banner = function () {
             img: "https://via.placeholder.com/164",
         },
     ];
-    return (jsxRuntime.jsxs(Box, __assign({ sx: { flexGrow: 1 } }, { children: [jsxRuntime.jsx(AppBar, __assign({ position: "static" }, { children: jsxRuntime.jsxs(Toolbar, { children: [jsxRuntime.jsx(IconButton, __assign({ size: "large", edge: "start", color: "inherit", "aria-label": "menu", sx: { mr: 2 } }, { children: jsxRuntime.jsx(MenuIcon, {}) })), jsxRuntime.jsx(Typography, __assign({ variant: "h6", component: "div", sx: { flexGrow: 1 } }, { children: "News" })), jsxRuntime.jsx(Button, __assign({ color: "inherit" }, { children: "Login" }))] }) })), jsxRuntime.jsx(ImageList, __assign({ sx: { width: 500, height: 450 }, cols: 3, rowHeight: 164 }, { children: itemData.map(function (item) { return (jsxRuntime.jsx(ImageListItem, { children: jsxRuntime.jsx("img", { src: item.img, srcSet: item.img, alt: item.title, loading: "lazy" }) }, item.img)); }) }))] })));
+    return (jsxRuntime.jsxs(Box, __assign({ sx: { flexGrow: 1 } }, { children: [jsxRuntime.jsx(AppBar, __assign({ position: "static" }, { children: jsxRuntime.jsxs(Toolbar, { children: [jsxRuntime.jsx(IconButton, __assign({ size: "large", edge: "start", color: "inherit", "aria-label": "menu", sx: { mr: 2 } }, { children: jsxRuntime.jsx(MenuIcon, {}) })), jsxRuntime.jsx(Typography, __assign({ variant: "h6", component: "div", sx: { flexGrow: 1 } }, { children: "News" })), jsxRuntime.jsx(Button, __assign({ color: "inherit" }, { children: "Login" }))] }) })), jsxRuntime.jsx(ImageList, __assign({ sx: { width: 500, height: 450 }, cols: 3, rowHeight: 164 }, { children: itemData.map(function (item, index) { return (jsxRuntime.jsx(ImageListItem, { children: jsxRuntime.jsx("img", { src: item.img, srcSet: item.img, alt: item.title, loading: "lazy" }) }, index)); }) }))] })));
 };
 
 var HelloWorld = function () {
