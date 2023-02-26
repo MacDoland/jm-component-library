@@ -6,26 +6,31 @@ import pkg from "./package.json" assert { type: "json" };
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import { getBabelOutputPlugin } from "@rollup/plugin-babel";
-import { resolve } from "path";
+import { resolve as pathResolve } from "path";
+import resolve from '@rollup/plugin-node-resolve';
 
 export default [
   {
     input: pkg.source,
     output: [
       { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "esm" },
+      { file: pkg.module, format: "es" },
     ],
     plugins: [
+      del({ targets: ["dist/*"] }),
       external(),
+      commonjs({
+        esmExternals: true
+      }),
       typescript(),
       babel({
         exclude: "node_modules/**",
         babelHelpers: "bundled",
         extensions: [".js", ".ts"],
-        include: resolve("src", "**", "*.ts"),
+        include: pathResolve("src", "**", "*.js", "*.ts"),
       }),
+      resolve(),
       //terser(), //minified bundle
-      del({ targets: ["dist/*"] }),
     ],
     external: Object.keys(pkg.peerDependencies || {}),
   },
