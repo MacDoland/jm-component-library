@@ -35,6 +35,7 @@ import theme from "./theme/index";
 export {
   /* MUI Direct Exports */
   AppBar,
+  Banner,
   Box,
   Button,
   Card,
